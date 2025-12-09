@@ -26,27 +26,44 @@
 
 **Run:** `python day1_types.py`
 
-### Day 2: Async/Await Mastery (In Progress)
-**What you'll learn:**
-- asyncio basics
+### Day 2: Async/Await Mastery ✅
+**Status:** COMPLETE
+
+**What you learned:**
+- asyncio basics and event loop
 - async/await syntax
 - Concurrent vs. parallel execution
 - When to use async (I/O bound operations)
+- Performance comparison: 5x speedup with async!
 
 **Deliverable:** `day2_async.py`
 - Synchronous vs. asynchronous comparison
 - Concurrent API calls using asyncio.gather()
-- Performance measurement
-- Pytest tests for async code
+- Performance measurement (10s sync vs 2s async)
+- Advanced patterns (timeouts, retries)
+- Tests for async code
 
-### Day 3: Error Handling + Logging
+**Key Results:**
+- Synchronous: 10.02 seconds (blocking)
+- Asynchronous: 2.00 seconds (concurrent)
+- **Speedup: 5.0x faster!**
+
+**Run:** `python day2_async.py`
+
+### Day 3: Error Handling + Logging (In Progress)
 **What you'll learn:**
 - Exception handling (try/except/finally)
 - Custom exceptions
 - Logging best practices
 - Log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+- Context managers (__enter__/__exit__)
 
 **Deliverable:** `day3_errors.py`
+- User validation with proper error handling
+- Database operations with exception catching
+- API calls with error recovery
+- Resource cleanup with context managers
+- Structured logging throughout
 
 ### Day 4: Testing (pytest)
 **What you'll learn:**
@@ -90,10 +107,10 @@ pytest --cov=. tests/
 ```
 week1/
 ├── venv/                    # Virtual environment
-├── day1_types.py           # Day 1: Types + Dataclasses
-├── day2_async.py           # Day 2: Async/Await
-├── day3_errors.py          # Day 3: Error handling
-├── test_app.py             # Day 4: Tests
+├── day1_types.py           # Day 1: Types + Dataclasses ✅
+├── day2_async.py           # Day 2: Async/Await ✅
+├── day3_errors.py          # Day 3: Error handling ⏳
+├── test_app.py             # Day 4: Tests ⏳
 ├── requirements.txt        # Dependencies
 ├── README.md              # This file
 └── .gitignore            # Git ignore rules
@@ -157,6 +174,18 @@ async def main():
 asyncio.run(main())
 ```
 
+### Error Handling
+```python
+try:
+    result = risky_operation()
+except ValueError as e:
+    logger.error(f"Validation failed: {e}")
+except Exception as e:
+    logger.critical(f"Unexpected error: {e}", exc_info=True)
+finally:
+    cleanup()
+```
+
 ## Resources
 
 - [Real Python: Type Checking](https://realpython.com/python-type-checking/)
@@ -170,16 +199,16 @@ asyncio.run(main())
 | Day | Focus | Hours | Status |
 |-----|-------|-------|--------|
 | 1 | Type Hints + Dataclasses | 2h | ✅ Complete |
-| 2 | Async/Await | 2h | ⏳ In Progress |
-| 3 | Error Handling + Logging | 2h | ⏳ Pending |
+| 2 | Async/Await | 2h | ✅ Complete |
+| 3 | Error Handling + Logging | 2h | ⏳ In Progress |
 | 4 | Testing (pytest) | 3h | ⏳ Pending |
 | 5 | Packaging + Structure | 2h | ⏳ Pending |
 | **Total** | **Python Fundamentals** | **11h** | |
 
 ## Next Steps
-- Day 2: Start `day2_async.py`
-- Focus on understanding event loops and concurrent execution
-- Measure performance improvements with async
+- Day 3: Start `day3_errors.py`
+- Focus on logging, custom exceptions, and error recovery
+- Understand context managers
 
 ---
 
